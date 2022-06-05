@@ -1,0 +1,12 @@
+.genre_btn{
+     height: 35px;
+     width: 100px;
+     border: none;
+     background: #353334;
+     color: #f4f4f4;
+ }
+.genre_btn:hover{
+    background: #c42020;
+    border-right: 4mm ridge rgb(196, 32, 32);
+
+}

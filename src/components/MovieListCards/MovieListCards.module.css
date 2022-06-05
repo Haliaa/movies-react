@@ -1,0 +1,33 @@
+.cards {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    row-gap: 15px;
+}
+.pages{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pages button{
+    height: 50px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    background: #3e3f40;
+    font-size: 20px;
+    border-right: 4mm ridge rgb(196, 32, 32);
+    color: aliceblue;
+    cursor: pointer;
+    margin: 0 30px;
+}
+.pages button:hover{
+    border-right: 4mm ridge rgb(196, 32, 32);
+    background: #e4e4e4;
+    color: black;
+
+}
+

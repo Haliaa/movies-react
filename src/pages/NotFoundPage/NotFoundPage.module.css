@@ -1,0 +1,25 @@
+.not_found{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0 0 -125px;
+}
+h1{
+    height: 50px;
+}
+.not_found_btn{
+    height: 50px;
+    width: 200px;
+    font-size: 30px;
+    border-radius: 10px;
+    margin: 20px;
+    cursor: pointer;
+    background: crimson;
+    color: aliceblue;
+}
+button:hover{
+    background: azure;
+    color: black;
+}
