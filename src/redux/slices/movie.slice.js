@@ -2,16 +2,17 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {movieService} from "../../services";
 
 const initialState = {
+    movies: [],
+    id: null,
     page: 1,
     next: null,
     prev: null,
-    movies: [],
-    id: null,
-    with_genres: null
+    with_genres: null,
+    search: ''
 };
 
 const getAllMovies = createAsyncThunk(
-    'movieSlice/getAllMovies',
+    'getAllMovies',
     async ({page}) => {
         const {data} = await movieService.getAllMovies(page);
         return data
@@ -19,7 +20,7 @@ const getAllMovies = createAsyncThunk(
 );
 
 const getMovie = createAsyncThunk(
-    'movieSlice/getMovieById',
+    'getMovieById',
     async ({id}) => {
         const {data} = await movieService.getMovieById(id);
         return data
@@ -28,9 +29,17 @@ const getMovie = createAsyncThunk(
 );
 
 const getMoviesByGenre = createAsyncThunk(
-    'movieSlice/getMoviesByGenre',
+    'getMoviesByGenre',
     async ({page, with_genres}) => {
         const {data} = await movieService.getMoviesWithGenre(page, with_genres);
+        return data
+    }
+)
+
+const searchMovie = createAsyncThunk(
+    'searchMovie',
+    async ({ page, search}) => {
+        const {data} = await movieService.searchMovieByTitle(page, search);
         return data
     }
 )
@@ -40,41 +49,52 @@ const movieSlice = createSlice({
     initialState,
     reducers: {
         setMoviePage: (state, action) => {
-            state.page = action.payload;
+            state.page = action.payload
+        },
+        setMovieSearch: (state, action) => {
+            state.search = action.payload
+            state.page = action.payload
         }
     },
     extraReducers:(builder) => {
         builder
             .addCase(getAllMovies.fulfilled, (state, action)=> {
                 const {page, next, prev, results} = action.payload;
-
-                state.page = page;
-                state.next = next;
-                state.prev = prev;
-                state.movies = results;
+                state.prev = prev
+                state.next = next
+                state.page = page
+                state.movies = results
 
             })
             .addCase(getMovie.fulfilled, (state, action) => {
-                const {id} = action.payload;
-                state.id = id;
+                const {id} = action.payload
+                state.id = id
             })
             .addCase(getMoviesByGenre.fulfilled, (state, action) => {
-                const {page, genres, with_genres, results} = action.payload;
-                state.page = page;
-                state.with_genres = with_genres
+                const {page, genres, with_genres, results} = action.payload
+                state.page = page
+                state.movies = results
                 state.genres = genres
-                state.movies = results;
+                state.with_genres = with_genres
+            })
+            .addCase(searchMovie.fulfilled, (state, action) => {
+                const {page, search, results} = action.payload
+                state.page = page
+                state.search = search
+                state.movies = results
             })
     }
 });
 
-const {reducer: movieReducer, actions:{setMoviePage}} = movieSlice;
+const {reducer: movieReducer, actions:{setMoviePage,setMovieSearch}} = movieSlice;
 
 const movieActions ={
     getAllMovies,
     getMovie,
     getMoviesByGenre,
-    setMoviePage
+    setMoviePage,
+    setMovieSearch,
+    searchMovie
 };
 
 export{

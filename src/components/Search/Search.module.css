@@ -1,14 +1,15 @@
-.search_inp{
+.search_movie{
     display: block;
-    width: 100%;
     padding: 10px;
     margin-left: 10px;
-    border: none;
+
+    width: 100%;
+
     outline: none;
     border-radius: 30px;
-    color: black;
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: bold;
 }
-.search_inp:focus{
+.search_movie:focus{
     box-shadow: 0 0 5px 1px #000000;
 }

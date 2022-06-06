@@ -1,15 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {genreActions} from "../../redux";
 import {Genre} from "../Genre/Genre";
 
 const GenreList = () => {
-    const {genreList} = useSelector(state => state.genres);
     const dispatch = useDispatch();
+    const {genreList} = useSelector(state => state.genres);
 
     useEffect(() => {
         dispatch(genreActions.getGenres());
-    },[])
+    },[dispatch])
 
     return (
         <div>

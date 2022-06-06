@@ -2,7 +2,7 @@ import React from 'react';
 
 import css from './Header.module.css'
 import {Search} from "../Search/Search";
-import {UserLogo} from "../UserLogo/UserLogo";
+import {UserProfile} from "../UserLogo/UserProfile";
 import ts from "./tsss.png";
 
 
@@ -11,7 +11,7 @@ const Header = () => {
         <div className={css.header}>
             <Search/>
             <div>NETFLIX & <img src={ts} alt="ts"/></div>
-            <UserLogo/>
+            <UserProfile/>
         </div>
     );
 };

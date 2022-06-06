@@ -10,7 +10,6 @@ const MovieInfoPage = () => {
     const {id} = useParams();
     const {state} = useLocation();
     const dispatch = useDispatch();
-
     const [movie, setMovie] = useState(state)
 
     useEffect(() => {
@@ -19,7 +18,8 @@ const MovieInfoPage = () => {
         } else {
             setMovie(state)
         }
-    }, [state, id])
+    }, [id,state,dispatch])
+
     return (
         <div>
             {movie && <MoviePoster movie={movie}/>}

@@ -1,12 +1,12 @@
-.genre_btn{
-     height: 35px;
-     width: 100px;
-     border: none;
+.genre{
+     height: 40px;
+     width: 200px;
      background: #353334;
      color: #f4f4f4;
  }
-.genre_btn:hover{
+.genre:hover{
     background: #c42020;
     border-right: 4mm ridge rgb(196, 32, 32);
-
+    border-top: #818181 1px solid;
+    border-bottom: #9f9f9f 1px solid;
 }

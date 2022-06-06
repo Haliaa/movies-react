@@ -12,6 +12,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .pages button{
     height: 50px;
     width: 100px;
@@ -23,6 +24,9 @@
     color: aliceblue;
     cursor: pointer;
     margin: 0 30px;
+}
+.btn.disabled {
+  pointer-events: none;
 }
 .pages button:hover{
     border-right: 4mm ridge rgb(196, 32, 32);

@@ -2,22 +2,19 @@ import React from 'react';
 
 import css from './Genre.module.css'
 import {useSearchParams} from "react-router-dom";
+import {useSelector} from "react-redux";
 
-const Genre = ({genre:{name, id}}) => {
-    const [query, setQuery] = useSearchParams({page:'1', with_genres:''});
-    const page = query.get('page');
-    // const with_genres = query.get('with_genres');
+const Genre = ({genre: {id, name}}) => {
+    const [query, setQuery] = useSearchParams();
+    const {page} = useSelector(state => state.movies);
 
-
-    const movieListWithGenre = () => {
-        setQuery({page:`${page}`, with_genres: `${id}`});
-
+    const moviesListWith_genres = () => {
+        setQuery({page: `${page}`, with_genres: `${id}`});
     }
 
     return (
         <div>
-                <button onClick={movieListWithGenre} className={css.genre_btn}>{name}</button>
-
+            <button onClick={moviesListWith_genres} className={css.genre}>{name}</button>
         </div>
     );
 };

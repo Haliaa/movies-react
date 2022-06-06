@@ -3,9 +3,10 @@ const baseURL = process.env.REACT_APP_API
 const urls = {
     moviesUrl: '/discover/movie',
     movieById: '/movie',
+    imageSmall: 'https://image.tmdb.org/t/p/w200',
     imageOriginal: 'https://image.tmdb.org/t/p/original',
-    imageW200: 'https://image.tmdb.org/t/p/w200',
-    getGenreList: '/genre/movie/list'
+    getGenreList: '/genre/movie/list',
+    searchMovie: '/search/movie'
 }
 
 export {

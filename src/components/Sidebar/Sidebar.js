@@ -1,12 +1,11 @@
 import React from 'react';
-import css from './LeftBar.module.css'
 import {GenreList} from "../GenreList/GenreList";
-const LeftBar = () => {
+const Sidebar = () => {
     return (
-        <div className={css.leftBar}>
+        <div>
             <GenreList/>
         </div>
     );
 };
 
-export {LeftBar};
+export {Sidebar};

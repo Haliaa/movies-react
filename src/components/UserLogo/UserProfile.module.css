@@ -1,0 +1,20 @@
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    width: 50px;
+
+    border-radius: 25px;
+    margin-inline: 20px;
+    cursor: pointer;
+}
+.circle img{
+    width: 52px;
+}

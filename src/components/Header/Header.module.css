@@ -1,9 +1,12 @@
 .header{
-    height: 75px;
+    height: 80px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     background: #c42020;
+
     font-weight: bold;
     font-size: 20px;
     font-family: "Bodoni MT Poster Compressed"
