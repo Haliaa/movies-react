@@ -21,13 +21,11 @@
     background: #3e3f40;
     font-size: 20px;
     border-right: 4mm ridge rgb(196, 32, 32);
-    color: aliceblue;
+    color: #f4f4f4;
     cursor: pointer;
     margin: 0 30px;
 }
-.btn.disabled {
-  pointer-events: none;
-}
+
 .pages button:hover{
     border-right: 4mm ridge rgb(196, 32, 32);
     background: #e4e4e4;

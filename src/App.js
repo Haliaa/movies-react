@@ -4,6 +4,7 @@ import {MovieInfoPage, MoviesPage, NotFoundPage} from "./pages";
 import css from './App.module.css'
 
 function App() {
+
   return (
     <div className={css}>
         <Routes>
@@ -13,7 +14,6 @@ function App() {
                 <Route path={'movie/:id'} element={<MovieInfoPage/>}/>
                 <Route path={'*'} element={<NotFoundPage/>}/>
             </Route>
-
         </Routes>
     </div>
   );

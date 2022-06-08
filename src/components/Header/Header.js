@@ -1,23 +1,30 @@
 import React from 'react';
+import {Switch} from "@mui/material";
+import {useDispatch, useSelector} from "react-redux";
 
-import css from './Header.module.css'
+import {themeActions} from "../../redux";
 import {Search} from "../Search/Search";
 import {UserProfile} from "../UserLogo/UserProfile";
+import {HeaderStyle} from "../../styles";
 import ts from "./tsss.png";
 
-
 const Header = () => {
-    // const isBackgroundRed = true;
-    // const changeTheme = () => {
-    //     const isBackgroundRed = true;
-    // }
+    const dispatch = useDispatch()
+    const {theme} = useSelector(state => state.theme);
+
+    const changeTheme = () => {
+        dispatch(themeActions.toggleTheme(theme));
+        localStorage.setItem('theme', theme)
+    }
+
     return (
-        <div className={css.header}>
-            <Search/>
-            <div>NETFLIX & <img src={ts} alt="ts"/></div>
-            <UserProfile/>
-            {/*<button onClick={changeTheme}></button>*/}
-        </div>
+        <HeaderStyle theme={theme}>
+            <div><Search/></div>
+            <div>NETFLIX & <img style={{width: '20px'}} src={ts} alt="ts"/></div>
+            <div style={{display: 'flex', alignItems: 'center'}}><UserProfile/>
+                <Switch defaultChecked={false} color="error" onChange={changeTheme}/>
+            </div>
+        </HeaderStyle>
     );
 };
 

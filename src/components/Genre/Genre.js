@@ -1,8 +1,8 @@
 import React from 'react';
-
-import css from './Genre.module.css'
 import {useSearchParams} from "react-router-dom";
 import {useSelector} from "react-redux";
+
+import css from './Genre.module.css'
 
 const Genre = ({genre: {id, name}}) => {
     const [query, setQuery] = useSearchParams();

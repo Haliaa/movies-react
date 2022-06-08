@@ -10,7 +10,7 @@ import {Sidebar} from "../Sidebar/Sidebar";
 const MovieListCards = () => {
     const dispatch = useDispatch();
     const {movies} = useSelector(state => state.movies);
-    const [query, setQuery] = useSearchParams({page:'', with_genres:''});
+    const [query, setQuery] = useSearchParams({page:'1', with_genres:''});
     const page = query.get('page');
     const with_genres = query.get('with_genres');
 
@@ -44,7 +44,7 @@ const MovieListCards = () => {
                 <div className={css.cards}>
                     {movies.map((movie) => <MovieListCard key={movie.id} movie={movie}/>)}
                 </div>
-                <div className={css.pages}>
+                <div className={css.pages} >
                     <button onClick={prevPage}>Prev</button>
                     <h2>{page}</h2>
                     <button onClick={nextPage}>Next</button>

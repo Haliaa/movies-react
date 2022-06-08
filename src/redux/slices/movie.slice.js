@@ -8,7 +8,8 @@ const initialState = {
     next: null,
     prev: null,
     with_genres: null,
-    search: ''
+    search: '',
+    theme: JSON.parse(localStorage.getItem('theme')) || false
 };
 
 const getAllMovies = createAsyncThunk(
@@ -85,8 +86,19 @@ const movieSlice = createSlice({
             })
     }
 });
-
+const themeSlice = createSlice({
+    name:'themeSlice',
+    initialState,
+    reducers:{
+    toggleTheme:(state)=> {
+        state.theme = !state.theme
+    }}
+});
 const {reducer: movieReducer, actions:{setMoviePage,setMovieSearch}} = movieSlice;
+const {reducer: themeReducer, actions:{toggleTheme}} = themeSlice;
+const themeActions = {
+    toggleTheme
+};
 
 const movieActions ={
     getAllMovies,
@@ -99,5 +111,7 @@ const movieActions ={
 
 export{
     movieReducer,
-    movieActions
+    movieActions,
+    themeReducer,
+    themeActions
 }

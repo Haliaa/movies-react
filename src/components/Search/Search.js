@@ -26,8 +26,7 @@ const Search = () => {
         <form onSubmit={handleSubmit}>
             <input
                 type="text" placeholder=" Search movie" className={css.search_movie}
-                ref={inputName} onChange={handleOnChange}
-            />
+                ref={inputName} onChange={handleOnChange}/>
         </form>
     );
 };
