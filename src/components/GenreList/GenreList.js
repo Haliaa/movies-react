@@ -1,22 +1,25 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import {genreActions} from "../../redux";
-import {Genre} from "../Genre/Genre";
+import { genreActions } from "../../redux";
+import { Genre } from "../Genre/Genre";
 
 const GenreList = () => {
-    const dispatch = useDispatch();
-    const {genreList} = useSelector(state => state.genres);
+  const dispatch = useDispatch();
+  const { genreList, chosenGenres } = useSelector((state) => state.genres);
 
-    useEffect(() => {
-        dispatch(genreActions.getGenres());
-    },[dispatch])
+  useEffect(() => {
+    dispatch(genreActions.getGenres());
+  }, [dispatch]);
 
-    return (
-        <div>
-            {genreList.map(genre=> <Genre key={genre.id} genre={genre}/>)}
-        </div>
-    );
+  return (
+    <div>
+      {genreList.map((genre) => {
+        const isChosen = chosenGenres.includes(genre.id);
+        return <Genre key={genre.id} genre={genre} isChosen={isChosen} />;
+      })}
+    </div>
+  );
 };
 
-export {GenreList};
+export { GenreList };

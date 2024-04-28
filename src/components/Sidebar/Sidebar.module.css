@@ -1,1 +1,10 @@
-
+.container {
+  position: sticky;
+  width: 200px;
+  height: calc(100vh - 35px);
+  top: 40px;
+  left: 0;
+  color: white;
+  flex-grow: 0;
+  flex-shrink: 0;
+}

@@ -11,6 +11,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    height: 100px;
+        z-index: 100;
+        left: 0;
+        position: sticky;
+        /* color: white; */
 }
 
 .pages button{
