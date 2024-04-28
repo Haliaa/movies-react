@@ -1,7 +1,6 @@
 import axios from "axios";
-import {baseURL} from "../constants";
+import {baseURL, token} from "../constants";
 
-const token = process.env.API_KEY
 const axiosService = axios.create({
     baseURL,
     headers: {

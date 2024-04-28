@@ -1,4 +1,5 @@
-const baseURL = process.env.REACT_APP_API
+const baseURL = process.env.REACT_APP_API;
+const token = process.env.REACT_APP_API_KEY;
 
 const urls = {
     moviesUrl: '/discover/movie',
@@ -25,5 +26,6 @@ const theme = {
 export {
     baseURL,
     urls,
-    theme
+    theme,
+    token
 }
