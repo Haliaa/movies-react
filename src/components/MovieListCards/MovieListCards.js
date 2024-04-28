@@ -10,7 +10,7 @@ import { Sidebar } from "../Sidebar/Sidebar";
 const MovieListCards = () => {
   const dispatch = useDispatch();
   const { movies } = useSelector((state) => state.movies);
-  const [query, setQuery] = useSearchParams({ page: "1", with_genres: "" });
+  const [query, setQuery] = useSearchParams({ page: "1" });
   const page = query.get("page");
   const with_genres = query.get("with_genres");
 

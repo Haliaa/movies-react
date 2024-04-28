@@ -46,7 +46,6 @@ const movieSlice = createSlice({
       state.page = action.payload;
     },
     setMovieSearch: (state, action) => {
-      console.log('action.payload', action.payload);
       state.search = action.payload.search;
       state.page = action.payload.page;
     },

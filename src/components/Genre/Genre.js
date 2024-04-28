@@ -1,4 +1,3 @@
-import React from "react";
 import { useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { genreActions } from "../../redux";
@@ -9,13 +8,11 @@ const Genre = ({ genre: { id, name }, isChosen }) => {
   const dispatch = useDispatch();
 
   const [, setQuery] = useSearchParams();
-  const { page } = useSelector((state) => state.movies);
   const { chosenGenres } = useSelector((state) => state.genres);
-  const searchG = chosenGenres.join(',')
 
   const addGenreToFilterHandler = () => {
     dispatch(genreActions.addGenreToFilter(id));
-    setQuery({ page: `${page}`, with_genres: searchG });
+    setQuery({ page: "1", with_genres: chosenGenres.join(",") });
   };
 
   return (

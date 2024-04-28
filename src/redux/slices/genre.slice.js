@@ -26,6 +26,7 @@ const genreSlice = createSlice({
       state.id = action.payload;
     },
     addGenreToFilter: (state, action) => {
+      state.page = 1;
       const newItem = action.payload;
       const existingItem = state.chosenGenres.find(
         (genreId) => genreId === newItem
@@ -38,7 +39,10 @@ const genreSlice = createSlice({
         state.chosenGenres.push(newItem);
       }
 
-      sessionStorage.setItem("chosenGenres", JSON.stringify(state.chosenGenres));
+      sessionStorage.setItem(
+        "chosenGenres",
+        JSON.stringify(state.chosenGenres)
+      );
       return state;
     },
   },
