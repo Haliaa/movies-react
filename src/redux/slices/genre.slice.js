@@ -6,9 +6,9 @@ const initialState = {
   id: null,
   page: 1,
   genre: null,
-  chosenGenres: localStorage.getItem("chosenGenres")
+  chosenGenres: sessionStorage.getItem("chosenGenres")
     ? JSON.parse(
-        JSON.parse(JSON.stringify(localStorage.getItem("chosenGenres")))
+        JSON.parse(JSON.stringify(sessionStorage.getItem("chosenGenres")))
       )
     : [],
 };
@@ -38,7 +38,7 @@ const genreSlice = createSlice({
         state.chosenGenres.push(newItem);
       }
 
-      localStorage.setItem("chosenGenres", JSON.stringify(state.chosenGenres));
+      sessionStorage.setItem("chosenGenres", JSON.stringify(state.chosenGenres));
       return state;
     },
   },
