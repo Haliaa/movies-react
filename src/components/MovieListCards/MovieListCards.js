@@ -23,6 +23,8 @@ const MovieListCards = () => {
     if (prevPage >= 1) {
       if (query.has("with_genres")) {
         setQuery({ page: `${prevPage}`, with_genres });
+      } else {
+        setQuery({ page: `${prevPage}`, with_genres: "" });
       }
     }
   };
@@ -32,6 +34,8 @@ const MovieListCards = () => {
     if (nextPage <= 500) {
       if (query.has("with_genres")) {
         setQuery({ page: `${nextPage}`, with_genres });
+      } else {
+        setQuery({ page: `${nextPage}`, with_genres: "" });
       }
     }
   };
@@ -46,10 +50,10 @@ const MovieListCards = () => {
         </div>
       </div>
       <div className={css.pages}>
-          <button onClick={prevPage}>Prev</button>
-          <h2>{page}</h2>
-          <button onClick={nextPage}>Next</button>
-        </div>
+        <button onClick={prevPage}>Prev</button>
+        <h2>{page}</h2>
+        <button onClick={nextPage}>Next</button>
+      </div>
     </div>
   );
 };
