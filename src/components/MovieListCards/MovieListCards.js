@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
+import { Row, Col, ListGroup, Button } from "react-bootstrap";
 
 import css from "./MovieListCards.module.css";
 import { movieActions } from "../../redux";
@@ -40,21 +41,22 @@ const MovieListCards = () => {
     }
   };
   return (
-    <div>
-      <div style={{ display: "inline-flex" }}>
+    <Row>
+      <Row style={{ display: "inline-flex" }}>
         <Sidebar />
-        <div className={css.cards}>
+        <Row className={css.cards} sm={12} md={6} lg={4} xl={3}>
           {movies.map((movie) => (
             <MovieListCard key={movie.id} movie={movie} />
           ))}
-        </div>
-      </div>
-      <div className={css.pages}>
-        <button onClick={prevPage}>Prev</button>
+        </Row>
+      </Row>
+
+      <Row className={css.pages}>
+        <Button onClick={prevPage}>Prev</Button>
         <h2>{page}</h2>
-        <button onClick={nextPage}>Next</button>
-      </div>
-    </div>
+        <Button onClick={nextPage}>Next</Button>
+      </Row>
+    </Row>
   );
 };
 
