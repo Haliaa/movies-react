@@ -1,5 +1,10 @@
 # Getting Started with Create React App
 
+## Live Demo
+
+Explore the project live: [My Project Demo]([https://me.github.io/react-multi-table-main/myproject](https://movies-o4b368g2k-haliaas-projects.vercel.app/discover/movie))
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
